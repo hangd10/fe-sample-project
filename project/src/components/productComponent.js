@@ -3,6 +3,11 @@ import React, { Component } from 'react';
 import ProudctResource from '../resource/ProductResource';
 import ItemComponent from './itemComponent';
 
+/**
+ * 
+ *  Refactored as container/producst_list.js to leverage react redux
+ * 
+ */
 export default class ProductComponent extends Component {
     constructor() {
         super();

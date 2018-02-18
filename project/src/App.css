@@ -152,6 +152,10 @@ body {
   font-size: 25px;
 }
 
+.removeCartButton:hover {
+  cursor: pointer;
+}
+
 .closeCartButton {
   padding: 5px 18px;
   background-color: white;

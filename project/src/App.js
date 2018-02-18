@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 
-import HeaderComponent from './components/headerComponent';
-import ProductComponent from './components/productComponent';
-import CartComponent from './components/cartComponent';
+//import HeaderComponent from './components/headerComponent';
+// import ProductComponent from './components/productComponent';
+// import CartComponent from './components/cartComponent';
+
+import Header from './container/header';
+import ProductList from './container/products_list';
+import ProductsCart from './container/products_cart';
+
 import './App.css';
 
 class App extends Component {
@@ -17,18 +22,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      
-        <HeaderComponent />
+
+        <Header />
 
         <div>
             <section><h4 className="shopTitle">Shop our featured Collection</h4></section>
-            <ProductComponent />
+            <ProductList />
         </div>
 
         {/* TODO : Convert Modal to High Order Component for reusability */}
         <div id="modalId" className="modal">
             <div className="modal-content">
-                <CartComponent />
+                {/* <CartComponent /> */}
+                <ProductsCart />
             </div>
         </div>
       </div>

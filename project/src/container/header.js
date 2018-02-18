@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-/**
- * 
- *  Refactored as container/header.js to leverage react redux
- * 
- */
-export default class HeaderComponent extends Component {
+class Header extends Component {
     openCartModal() {
         document.getElementById("modalId").style.display = 'block';
+    }
+
+    renderCartCount() {
+        return Object.keys(this.props.cart).length;
     }
 
     render() {
@@ -19,9 +19,17 @@ export default class HeaderComponent extends Component {
                 </div>
                 <div>
                     <span className="cartTitle" onClick={this.openCartModal}>Your Cart</span> 
-                    <span className="cartCount">2</span>
+                    <span className="cartCount">{ this.renderCartCount() }</span>
                 </div>
             </header>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        cart : state.cart
+    }
+}
+
+export default connect(mapStateToProps)(Header);
